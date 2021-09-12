@@ -2,14 +2,16 @@ import React from "react";
 import frameTesti from "./../assets/images/frame-testi.jpg"
 import Star from "../elements/Star";
 import Button from "./../elements/Button";
+import Fade from 'react-reveal/Fade';
 
 export default function Testimony({data}){
     return(
+        <Fade bottom>
         <section className="container">
             <div className="row align-items-center">
                 <div className="col auto" style={{marginRight: 70}}>
                     <div className="testimonial-hero" style={{margin: `30px 0 0 30px`}}>
-                        <img src={data.imageUrl} alt="Testimonial" className="position-absolute" style={{zIndex: 1}} />
+                        <img src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`} alt="Testimonial" className="position-absolute" style={{zIndex: 1}} />
                         <img src={frameTesti} alt="Testimonial" className="position-absolute" style={{margin: `-30px 0 0 -30px`}} />
                     </div>
                 </div>
@@ -32,6 +34,7 @@ export default function Testimony({data}){
                 
             </div>
         </section>
+        </Fade>
        
     )
 }
